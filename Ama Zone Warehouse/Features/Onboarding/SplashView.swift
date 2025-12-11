@@ -8,6 +8,7 @@ struct SplashView: View {
         ZStack {
             Image("SplashBackground")
                 .resizable()
+                .aspectRatio(contentMode: .fill)
                 .ignoresSafeArea()
             
             VStack {

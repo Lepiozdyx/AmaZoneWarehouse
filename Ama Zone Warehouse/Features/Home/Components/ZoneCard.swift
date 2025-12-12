@@ -9,22 +9,21 @@ struct ZoneCard: View {
     var body: some View {
         Button(action: action) {
             ZStack(alignment: .topLeading) {
-                // Zone Indicator (Circle + Icon grouped)
-                ZStack {
-                    Circle()
-                        .fill(DesignSystem.Colors.secondary)
-                        .frame(width: 120, height: 120)
-                    
-                    Image(iconName)
-                        .resizable()
-                        .renderingMode(.template)
-                        .foregroundStyle(DesignSystem.Colors.white)
-                        .frame(width: 40, height: 40)
-                }
-                .offset(x: -20, y: -20)
+                Circle()
+                    .fill(DesignSystem.Colors.secondary)
+                    .frame(width: 140, height: 140)
+                    .offset(x: -30, y: -30)
                 
                 VStack(alignment: .leading) {
                     HStack(alignment: .top) {
+                        Image(iconName)
+                            .resizable()
+                            .renderingMode(.template)
+                            .foregroundStyle(DesignSystem.Colors.white)
+                            .frame(width: 32, height: 32)
+                            .padding(.leading, 12)
+                            .padding(.top, 12)
+                        
                         Spacer()
                         
                         Text("\(count)")
@@ -39,7 +38,7 @@ struct ZoneCard: View {
                     HStack {
                         Text(title)
                             .font(DesignSystem.Fonts.headline)
-                            .foregroundStyle(DesignSystem.Colors.primary)
+                            .foregroundStyle(DesignSystem.Colors.secondary)
                         
                         Spacer()
                         

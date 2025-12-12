@@ -5,7 +5,7 @@ import SwiftData
 struct AmaZoneWarehouseApp: App {
     var body: some Scene {
         WindowGroup {
-            RootView()
+            ContentView()
         }
         .modelContainer(for: [Product.self, MovementRecord.self])
     }

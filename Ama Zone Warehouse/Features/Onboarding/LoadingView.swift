@@ -1,8 +1,7 @@
 import SwiftUI
 
-struct SplashView: View {
-    @Environment(Router.self) private var router
-    @Environment(StorageService.self) private var storageService
+struct LoadingView: View {
+    @State private var loading: CGFloat = 0
     
     var body: some View {
         ZStack {
@@ -36,21 +35,21 @@ struct SplashView: View {
                 }
                 
                 Spacer()
+                
+                ProgressView()
+                    .scaleEffect(2)
+                    .padding(.bottom)
             }
+            
         }
-        .task {
-            try? await Task.sleep(for: .seconds(2))
-            if storageService.hasCompletedOnboarding {
-                router.push(.home)
-            } else {
-                router.push(.onboarding)
+        .onAppear {
+            withAnimation(.linear(duration: 3)) {
+                loading = 1
             }
         }
     }
 }
 
 #Preview {
-    SplashView()
-        .environment(Router())
-        .environment(StorageService.shared)
+    LoadingView()
 }

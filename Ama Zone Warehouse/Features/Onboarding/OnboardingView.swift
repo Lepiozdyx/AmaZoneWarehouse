@@ -30,7 +30,6 @@ struct OnboardingView: View {
                 if index == currentPage {
                     Image(pages[index].image)
                         .resizable()
-                        .aspectRatio(contentMode: .fill)
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                         .ignoresSafeArea()
                         .transition(.opacity.animation(.easeInOut(duration: 0.5)))

@@ -1,5 +1,4 @@
 import SwiftUI
-import SwiftData
 
 @main
 struct AmaZoneWarehouseApp: App {
@@ -7,6 +6,5 @@ struct AmaZoneWarehouseApp: App {
         WindowGroup {
             ContentView()
         }
-        .modelContainer(for: [Product.self, MovementRecord.self])
     }
 }

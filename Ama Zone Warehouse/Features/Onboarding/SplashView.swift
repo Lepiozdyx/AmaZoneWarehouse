@@ -39,7 +39,7 @@ struct SplashView: View {
             }
         }
         .task {
-            try? await Task.sleep(for: .seconds(2))
+            try? await Task.sleep(for: .seconds(0.6))
             if storageService.hasCompletedOnboarding {
                 router.push(.home)
             } else {

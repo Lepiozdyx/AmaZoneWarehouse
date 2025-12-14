@@ -1,4 +1,5 @@
 import SwiftUI
+import SwiftData
 
 struct ContentView: View {
     @StateObject private var manager = StateService()
@@ -24,6 +25,7 @@ struct ContentView: View {
                 
             case .loading:
                 RootView()
+                    .modelContainer(for: [Product.self, MovementRecord.self])
             }
         }
         .onAppear {

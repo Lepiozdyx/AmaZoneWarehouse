@@ -39,3 +39,8 @@ struct RootView: View {
     }
 }
 
+#Preview {
+    RootView()
+        .environment(Router())
+        .environment(StorageService.shared)
+}

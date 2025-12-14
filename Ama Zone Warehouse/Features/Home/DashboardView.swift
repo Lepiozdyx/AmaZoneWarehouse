@@ -16,6 +16,8 @@ struct DashboardView: View {
                 Text(storageService.selectedWarehouse)
                     .font(DesignSystem.Fonts.title)
                     .foregroundStyle(DesignSystem.Colors.secondary)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.5)
                 
                 Spacer()
                 
